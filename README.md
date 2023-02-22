@@ -1,24 +1,179 @@
-# README
+# 📗 Table of Contents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
+- [📝 License](#license)
 
-Things you may want to cover:
+ ## 📖 Blog App
 
-* Ruby version
+<a name="about-project"></a>
 
-* System dependencies
+**The Blog App** is a classic example of a blog website. It is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-* Configuration
+## 🛠 Built With <a name="built-with"></a>
 
-* Database creation
+- Ruby
+- Ruby on Rails
+- VSCode
+- Rubocop
+- PostgreSQL
 
-* Database initialization
+### Tech Stack <a name="tech-stack"></a>
 
-* How to run the test suite
+<details>
+  <summary>Linters</summary>
+  <ul>
+  <li>StyleLint</li>
+  <li>Rubocop</li>
+  </ul>
+</details>
 
-* Services (job queues, cache servers, search engines, etc.)
+<details>
+  <summary>Server</summary>
+  <ul>
+  <li>Ruby</li>
+  </ul>
+</details>
 
-* Deployment instructions
+<details>
+<summary>Database</summary>
+  <ul>
+  <li>PostgreSQL</li>
+  </ul>
+</details>
 
-* ...
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+- **Add posts**
+- **Add comments**
+- **Add like posts**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo Not Available
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+### Setup
+
+Clone this repository to your desired folder:
+
+
+Example commands:
+
+```sh
+  git clone https://github.com/keebot-png/Blog-app.git
+  cd Blog-app
+```
+-
+
+### Install
+
+Install this project with:
+
+```sh
+  cd Blog-app
+  gem install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Keenan Botes**
+
+- GitHub: [@keebot-png](https://github.com/keebot-png)
+- Twitter: [@KeenanBotes](https://twitter.com/KeenanBotes)
+- LinkedIn: [kee.bot@icloud.com](https://www.linkedin.com/in/keenan-botes-947043160)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [ ] **[Write SQL queries with Active Record]**
+- [ ] **[Add validations and model specs.]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+> Write a message to encourage readers to support your project
+
+If you like this project...
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> Give credit to everyone who inspired your codebase.
+
+I would like to thank Microverse.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./license) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
