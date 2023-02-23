@@ -64,6 +64,7 @@
 - **Add posts**
 - **Add comments**
 - **Add like posts**
+- **Add methods to models to perform CRUD operations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
