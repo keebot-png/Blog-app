@@ -65,6 +65,7 @@
 - **Add comments**
 - **Add like posts**
 - **Add methods to models to perform CRUD operations**
+- **Add validation and specs for testing models and methods**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
