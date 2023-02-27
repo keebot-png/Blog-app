@@ -66,6 +66,7 @@
 - **Add like posts**
 - **Add methods to models to perform CRUD operations**
 - **Add validation and specs for testing models and methods**
+- **Controller and respective routes have been set up**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,7 +139,7 @@ To run tests, run the following command:
 > Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Write SQL queries with Active Record]**
-- [ ] **[Add validations and model specs.]**
+- [ ] **[Adding appropriate views and forms]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
