@@ -1,0 +1,9 @@
+.block-post {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.post-comments {
+  display: flex;
+}
