@@ -67,6 +67,7 @@
 - **Add methods to models to perform CRUD operations**
 - **Add validation and specs for testing models and methods**
 - **Controller and respective routes have been set up**
+- **Setup mobile friendliness**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
