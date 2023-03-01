@@ -1,14 +1,7 @@
 <body>
-    <h1>Here are the lists of users</h1>
-    <div class="user-container">
-            <img src="" />
-            <div class="container">
-                <div class="username">
-                    <h2>UserName</h2>
-                </div>
-                <div class="posts">
-                    <h3 class="post-number">Number of posts: x</h3>
-                </div>
-            </div>
-    </div>
+    <% @users_all.each do |user| %>
+        <%= link_to "/users/#{user.id}" do %>
+        <%= render "partials/user_container", user: user %>
+        <% end %>
+    <% end %>
 </body>

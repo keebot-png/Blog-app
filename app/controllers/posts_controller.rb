@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.find(params[:user_id])
+    @users_find = User.find(params[:user_id])
   end
 
   def show
+    @user = User.find(params[:user_id])
     @post = Post.find_by(id: params[:id])
     return unless @post.nil?
 
