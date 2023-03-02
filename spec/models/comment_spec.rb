@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
   before do
     @user = User.new(name: 'Keenan Botes', bio: 'Lives in South Africa', posts_counter: 5)
     @post = Post.new(author: @user, title: 'Best blog ever', text: 'Lives in South Africa', comments_counter: 5,
