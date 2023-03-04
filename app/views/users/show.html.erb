@@ -5,14 +5,16 @@
             <p><%= @users_find.bio %></p>
         </article>
 
-        <article>
-            <h3>Post Title: <%= @post.title %></h3>
-            <p><%= @post.text %></p>
+        <% @users_find.recent_posts.each do |post| %>
+            <article>
+            <h3>Post Title: <%= post.title %></h3>
+            <p><%= post.text %></p>
             <div class="block">
-                <p>Comments: <%= @post.comments_counter %></p>
-                <p>Likes: <%= @post.likes_counter %></p>
+                <p>Comments: <%= post.comments_counter %></p>
+                <p>Likes: <%= post.likes_counter %></p>
             </div>
         </article>
+        <% end %>
         <%= link_to "/users/#{@users_find.id}/posts" do %>
     <button>See all posts</button>
     <% end %>

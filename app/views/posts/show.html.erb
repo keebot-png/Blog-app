@@ -12,11 +12,12 @@
         <p><%= @post.text %></p>
     </article>
 
+    <% if !@post.comments.empty? %>
     <article class="comments-box">
-    <% comments = Comment.where(post_id: @post.id) %>
-    <% comments.each do |comment| %>
+    <% @post.comments.each do |comment| %>
         <% user = User.find_by(id: comment.author_id).name %>
         <p><strong><%= user %>: <%= comment.text %></strong></p>
         <% end %>
     </article>
+    <% end %>
 </body>
