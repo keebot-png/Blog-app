@@ -6,6 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @users_find = User.find(params[:id])
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 end
