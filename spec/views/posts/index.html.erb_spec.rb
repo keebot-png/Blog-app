@@ -5,6 +5,7 @@ RSpec.describe 'posts#index', type: :feature do
     @user1 = User.create(name: 'Simon', photo: 'https://randomuser.me/api/portraits/men/1.jpg',
                          bio: 'Teacher in South Africa', posts_counter: 23)
 
+
     @post1 = Post.create(author: @user1, title: 'My first blog',
                          text: 'This is the blog 1 description that I wrote', comments_counter: 10, likes_counter: 82)
 
