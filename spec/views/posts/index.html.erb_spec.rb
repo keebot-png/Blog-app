@@ -1,48 +1,67 @@
-require 'rails_helper';
+require 'rails_helper'
 
-RSpec.describe 'posts#show', type: :feature do
+RSpec.describe 'posts#index', type: :feature do
+  before :each do
+    @user1 = User.create(name: 'Simon', photo: 'https://randomuser.me/api/portraits/men/1.jpg',
+                         bio: 'Teacher in South Africa', posts_counter: 23)
 
-    before :each do
-        @user_1 = User.create(name: 'Simon', photo: 'https://randomuser.me/api/portraits/men/1.jpg', bio: 'Teacher in South Africa', posts_counter: 23)
+    @post1 = Post.create(author: @user1, title: 'My first blog',
+                         text: 'This is the blog 1 description that I wrote', comments_counter: 10, likes_counter: 82)
 
-        @post_1 = Post.create(author: @user_1, title: 'My first blog', text: 'This is the blog 1 description that I wrote', comments_counter: 10, likes_counter: 82)
+    @comment1 = Comment.create(text: 'My first comment', author: @user1, post: @post1)
 
-        @comment_1 = Comment.create(text: 'My first comment', author: @user_1, post: @post_1)
+    visit user_posts_path(@user1.id)
+  end
 
-        @post_2 = Post.create(author: @user_1, title: 'My second blog', text: 'This is the blog 2 description that I wrote', comments_counter: 9, likes_counter: 81)
+  it 'can see the photo for this user' do
+    expect(page).to have_css("img[src*='https://randomuser.me/api/portraits/men/1.jpg']")
+  end
 
-        @comment_2 = Comment.create(text: 'My second comment', author: @user_1, post: @post_2)
-        @comment_3 = Comment.create(text: 'My third comment', author: @user_1, post: @post_2)
-        @comment_4 = Comment.create(text: 'My fouth comment', author: @user_1, post: @post_2)
-        
-        @post_3 = Post.create(author: @user_1, title: 'My third blog', text: 'This is the blog 3 description that I wrote', comments_counter: 8, likes_counter: 80)
-        @post_4 = Post.create(author: @user_1, title: 'My fourth blog', text: 'This is the blog 4 description that I wrote', comments_counter: 7, likes_counter: 79)
-        @post_5 = Post.create(author: @user_1, title: 'My fifth blog', text: 'This is the blog 5 description that I wrote', comments_counter: 6, likes_counter: 78)
-        @post_6 = Post.create(author: @user_1, title: 'My sixth blog', text: 'This is the blog 6 description that I wrote', comments_counter: 5, likes_counter: 77)
-        visit user_posts_path(@user_1.id)
-    end
-    
-    it 'can see the photo for this user' do
-        expect(page).to have_css("img[src*='https://randomuser.me/api/portraits/men/1.jpg']")
-    end
-    
-    it 'can see the username for this user' do
-        expect(page).to have_content('Simon')
-    end
-    
-    it 'can see the post counter for this user' do
-        expect(page).to have_content(@user_1.posts_counter)
-    end    
+  it 'can see the username for this user' do
+    expect(page).to have_content('Simon')
+  end
 
-    it 'can see the users first three posts' do
-        recent_posts = @user_1.recent_posts
-        recent_posts.each do |post|
-            expect(page).to have_content(post.text)
-        end
-    end
-    
-    it 'links to the posts#index page when you click show all posts' do
-        click_link "See all posts"
-        expect(page).to have_current_path user_posts_path(@user_1.id)
-    end
+  it 'can see the post counter for this user' do
+    expect(page).to have_content(@user1.posts_counter)
+  end
+
+  it 'can see a posts title' do
+    expect(page).to have_content('My first blog')
+  end
+
+  it 'can the first comment on a post' do
+    expect(page).to have_content('My first comment')
+  end
+
+  it 'can see a posts body' do
+    expect(page).to have_content('This is the blog 1 description that I wrote')
+  end
+
+  it 'can see how many comments a post has' do
+    expect(page).to have_text('Comments: 10')
+  end
+
+  it 'can see how many likes a post has' do
+    expect(page).to have_text('Likes: 82')
+  end
+
+  it 'can see a section for pagination' do
+    visit("/users/#{@user1.id}/posts")
+
+    expect(page).to have_link('1', href: "/users/#{@user1.id}/posts?posts=1")
+    expect(page).to have_link('2', href: "/users/#{@user1.id}/posts?posts=2")
+    expect(page).to have_link('3', href: "/users/#{@user1.id}/posts?posts=3")
+
+    click_link('2')
+
+    expect(page).to have_current_path("/users/#{@user1.id}/posts?posts=2")
+  end
+
+  it 'links to the posts#index page when you click show all posts' do
+    user1 = @user1.id
+    post1 = @post1.id
+    click_link('My first blog')
+
+    expect(page).to have_current_path("/users/#{user1}/posts/#{post1}")
+  end
 end
