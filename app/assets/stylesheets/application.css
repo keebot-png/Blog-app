@@ -13,21 +13,20 @@
  *= require_tree .
  *= require_self
  */
-
- .main1 {
-    text-align: center;
-    margin: auto;
+.main1 {
+  text-align: center;
+  margin: auto;
 }
 
 .main2 {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
 
 input {
-    width: 40%;
+  width: 40%;
 }
 
 #user_remember_me {
-    width: auto;
+  width: auto;
 }
