@@ -131,6 +131,12 @@ To run tests, run the following command:
 - Twitter: [@KeenanBotes](https://twitter.com/KeenanBotes)
 - LinkedIn: [kee.bot@icloud.com](https://www.linkedin.com/in/keenan-botes-947043160)
 
+👤 **Linus shaddai**
+
+- GitHub: [@linushaddai99](https://github.com/linushaddai99)
+- LinkedIn: [@linusshaddai](https://www.linkedin.com/in/linusshaddai/)
+-Twitter: [@ShaddaiLinus](https://twitter.com/ShaddaiLinus)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
