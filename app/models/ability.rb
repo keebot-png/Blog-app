@@ -6,40 +6,12 @@ class Ability
 
     can :read, :all
 
-    can %i[create destroy], Post, author: user
-
-    can %i[create destroy], Comment, author: user
-
-    # return unless user.role?
-
-    # can :destroy, Post do |post|
-    #   post.user == user
-    # end
-    # can :destroy, Comment do |comment|
-    #   comment.user == user
-    # end
-
-    # can :manage, :all
-
-    # Define abilities for the user here. For example:
-    #
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, published: true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
+    if user.role == 'admin' 
+      can :manage, :all
+    else
+      can :manage, Post, author: user 
+      can :manage, Comment, author: user
+      can :read, :all
+    end
   end
 end
