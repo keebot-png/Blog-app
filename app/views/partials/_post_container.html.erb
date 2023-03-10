@@ -8,5 +8,6 @@
       <%= form.submit "Like" %>
       <br/>
     <% end %>
+    
     <button id="add_comment"><%= link_to 'Add comment', new_user_post_comment_path(user_id: post.author.id, post_id: post.id) %></button>
 </article>

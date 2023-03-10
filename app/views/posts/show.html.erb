@@ -17,6 +17,7 @@
     <% @post.comments.each do |comment| %>
         <% user = User.find_by(id: comment.author_id).name %>
         <p><strong><%= user %>: <%= comment.text %></strong></p>
+    
         <% end %>
     </article>
     <% end %>
