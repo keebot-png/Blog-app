@@ -1,10 +1,4 @@
 class CommentsController < ApplicationController
-  def index
-    @comments = Comment.all
-
-    render json: @comments
-  end
-
   def new
     @comment = Comment.new
   end
