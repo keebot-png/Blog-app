@@ -12,7 +12,6 @@ class Ability
 
     # return unless user.role?
 
-
     # can :destroy, Post do |post|
     #   post.user == user
     # end
