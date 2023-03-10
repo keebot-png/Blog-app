@@ -1,29 +1,26 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    
-      return unless user.present?
-      can :read, :all
-      
-      can %i[create destroy], Post, author: user
+    return unless user.present?
 
-      can %i[create destroy], Comment, author: user
-      
-      # return unless user.role?
-      
+    can :read, :all
+
+    can %i[create destroy], Post, author: user
+
+    can %i[create destroy], Comment, author: user
+
+    # return unless user.role?
 
 
-      # can :destroy, Post do |post|
-      #   post.user == user
-      # end
-      # can :destroy, Comment do |comment|
-      #   comment.user == user
-      # end
+    # can :destroy, Post do |post|
+    #   post.user == user
+    # end
+    # can :destroy, Comment do |comment|
+    #   comment.user == user
+    # end
 
-      # can :manage, :all
+    # can :manage, :all
 
     # Define abilities for the user here. For example:
     #
