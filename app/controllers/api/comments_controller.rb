@@ -1,6 +1,6 @@
 class Api::CommentsController < Api::ApplicationController
   def index
-    @comments = Comment.all.where(author_id: params[:user_id], post_id: params:[post_id])
+    @comments = Comment.all.where(author_id: params[:user_id], post_id: params[:post_id])
     render json: @comments
   end
 
