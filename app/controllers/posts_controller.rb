@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
-    @posts = Post.where(params[:id])
+    @posts = Post.where(author_id: params[:user_id])
     @users_find = User.includes(:posts).find(params[:user_id])
   end
 
@@ -29,6 +30,14 @@ class PostsController < ApplicationController
 
     redirect_to user_posts_path(user_id: params[:user_id])
     flash[:success] = 'Saved Successfully'
+  end
+
+  def destroy
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+    @post.destroy
+    flash[:success] = 'Post was deleted successfully'
+    redirect_to user_posts_path(current_user.id)
   end
 
   private

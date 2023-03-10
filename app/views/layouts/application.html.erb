@@ -11,10 +11,13 @@
   </head>
 
   <body>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
+    <p>Signed in as:<%= current_user.name %></p>
     <a href="/">Home</a>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
       <a href="/users/sign_in">Sign in</a>
     <% end %>

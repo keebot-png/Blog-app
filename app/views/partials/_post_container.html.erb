@@ -8,5 +8,11 @@
       <%= form.submit "Like" %>
       <br/>
     <% end %>
+    <% if can? :destroy, post %>
+          <%= link_to "Delete", user_post_path(@users_find.id, post.id), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+        <% end %>
     <button id="add_comment"><%= link_to 'Add comment', new_user_post_comment_path(user_id: post.author.id, post_id: post.id) %></button>
 </article>
